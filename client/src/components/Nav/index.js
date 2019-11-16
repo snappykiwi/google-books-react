@@ -9,7 +9,7 @@ function NavbarComp() {
           Search
         </NavItem>
         <NavItem href="/save">
-          Save
+          Saved
         </NavItem>
       </Navbar>
   )

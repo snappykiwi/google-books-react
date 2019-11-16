@@ -12,10 +12,6 @@ class Search extends Component {
     search: ""
   }
 
-  // componentDidMount() {
-  //   this.loadBooks(this.state.search);
-  // }
-
   loadBooks = () => {
     console.log(this.state.search);
     API.getGoogle(this.state.search)
