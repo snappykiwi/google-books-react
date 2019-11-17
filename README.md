@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Google Book Search
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This website is built using React for a front end and a NodeJs with Express backend and a Mongo database. It pulls from the Google Books API using Axios when a user enters the search for a book. Some basic information for books which fit the search query are displayed including their image, title, authors, and description, along with a link. Users can then choose to either view the book information on google or save the book to the database. All books saved to the database will appear on the "saved" page. Users can also delete books from the database which removes them from the saved page as well.<br/>
+<br/>
+This website is made up of two pages: Search and Save.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies 
+* ReactJS
+* MongoDB
+* Mongoose
+* Axios
+* Express
+* NodeJS
+* Materialize
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<br/>
 
-### `npm test`
+## Code Structure
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The code is split up with all of the react/front end code in the client folder which is then split into a public folder which contains the static files, and a src folder which contains the components, pages, utils, and index.js/App.js and their corresponding styles. App.js is where the router for the react pages can be found. <br/>
+<br/>
+The pages folder contains a folder for each Search and Save. These have the js and css files which are necessary for those pages. Both are class components. The components folder has the three other components necessary for the website: Nav, Results, and Searchbar. Again, these folders each contain the appropriate js and css files. The Results component is reused for the Search and Save pages, being used to display the data received back from the google books api or the database depending on the page. <br/>
+<br/>
+The functions which call for the data, using axios are located in the API.js file in the utils folder <br/>
+<br/>
+The back end code and folders are located in the root of the project. This is where the server.js file is, which starts up the express server.<br/>
+<br/>
+The models for the database are in the models folder, which has an index.js file to serve up the models when the models folder is referenced. It also contains the Book.js file which holds the schema for the mongoose Book model.<br/>
+<br/>
+The controllers folder contains the booksController.js file. This is where the functions which make the calls/queries to the db are. There are methods for finding all of the books in the db, for creating a new book in the db, and for deleting a specific book from the db. <br/>
+<br/>
+Lastly there is the routes folder which holds the apiRoutes and references to the booksController methods. 
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

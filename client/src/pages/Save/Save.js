@@ -36,7 +36,11 @@ class Save extends Component {
           </Col>
         </Row>
         <Row className="center">
+        {this.state.books.length ? (
           <Results books={this.state.books} loadBooks={this.loadBooks}></Results>
+        ) : (
+          <h3 className="noResults">No Books Saved</h3>
+        )}
         </Row>
       </>
     )

@@ -58,7 +58,7 @@ class Search extends Component {
             {this.state.books.length ? (
               <Results {...this.state}></Results>
             ) : (
-                <h3 className="noResults">Search to View Books</h3>
+                <h3 className="noResults">Enter Search to View Books</h3>
               )}
 
           </Col>
