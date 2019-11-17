@@ -15,6 +15,7 @@ This website is made up of two pages: Search and Save.
 * Express
 * NodeJS
 * Materialize
+* Heroku 
 
 <br/>
 
@@ -32,5 +33,8 @@ The models for the database are in the models folder, which has an index.js file
 <br/>
 The controllers folder contains the booksController.js file. This is where the functions which make the calls/queries to the db are. There are methods for finding all of the books in the db, for creating a new book in the db, and for deleting a specific book from the db. <br/>
 <br/>
-Lastly there is the routes folder which holds the apiRoutes and references to the booksController methods. 
+Lastly there is the routes folder which holds the apiRoutes and references to the booksController methods. <br/>
 
+## Other Info
+
+Check it out: https://em-react-google-books.herokuapp.com/
