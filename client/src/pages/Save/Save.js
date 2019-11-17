@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-materialize';
 import Results from '../../components/Results'
-import Searchbar from '../../components/Searchbar';
 import API from '../../utils/API';
 
 class Save extends Component {
@@ -9,36 +8,36 @@ class Save extends Component {
   state = {
     books: []
   }
-  
+
   componentDidMount() {
     this.loadBooks();
   }
 
 
   loadBooks = () => {
-    console.log(this.state.search);
+
     API.getBooks()
       .then(res => {
-        console.log(res);
         this.setState({ books: res.data, search: "" })
-      }
-      )
+      })
       .catch(err => console.log(err));
   };
-  
-  
+
+
+
   render() {
     return (
       <>
         <Row>
-          <Col s={12} className="pageTitle">
+          <Col s={12} className="pageTitle center">
 
-            <h1 className="center">Saved Books</h1>
+            <h1>Saved Books</h1>
 
           </Col>
         </Row>
-        
-        <Results books={this.state.books}></Results>
+        <Row className="center">
+          <Results books={this.state.books} loadBooks={this.loadBooks}></Results>
+        </Row>
       </>
     )
   }
