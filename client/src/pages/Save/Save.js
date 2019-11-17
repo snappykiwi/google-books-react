@@ -31,10 +31,13 @@ class Save extends Component {
     return (
       <>
         <Row>
-          <Col s={12}>
+          <Col s={12} className="pageTitle">
+
             <h1 className="center">Saved Books</h1>
+
           </Col>
         </Row>
+        
         <Results books={this.state.books}></Results>
       </>
     )

@@ -12,13 +12,11 @@ function App() {
     <Router>
       <div>
         <NavbarComp />
-        <Container>
           <Switch>
             <Route exact path="/" component={Search} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/save" component={Save} />
           </Switch>
-        </Container>
       </div>
     </Router>
 

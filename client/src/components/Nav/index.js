@@ -1,16 +1,18 @@
 import React from 'react';
-import { Navbar, NavItem } from 'react-materialize';
+import { Navbar } from 'react-materialize';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 function NavbarComp() {
 
   return (
-      <Navbar brand={<a />} alignLinks="right">
-        <NavItem href="/search">
+      <Navbar brand={<a>Google Books Search</a>} alignLinks="right">
+        <Link to="/search">
           Search
-        </NavItem>
-        <NavItem href="/save">
+        </Link>
+        <Link to="/save">
           Saved
-        </NavItem>
+        </Link>
       </Navbar>
   )
 

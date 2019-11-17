@@ -17,7 +17,7 @@ module.exports = {
   },
 
   delete: function(req, res) {
-    db.Book.remove({
+    db.Book.deleteOne({
       id: req.params.id
     }).then(dbBook => {
       console.log(dbBook);

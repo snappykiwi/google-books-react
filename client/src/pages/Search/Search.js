@@ -4,6 +4,7 @@ import { debounce } from 'throttle-debounce';
 import Results from '../../components/Results'
 import Searchbar from '../../components/Searchbar';
 import API from '../../utils/API';
+import './styles.css';
 
 class Search extends Component {
 
@@ -26,7 +27,7 @@ class Search extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     console.log(value);
-    this.setState({search: value})
+    this.setState({ search: value })
   };
 
   waitSearch = (event) => {
@@ -41,15 +42,25 @@ class Search extends Component {
 
     return (
       <>
-        <Searchbar term={this.state.search} type={this.handleInputChange} loadBooks={this.loadBooks}></Searchbar>
         <Row className="center">
-          <Col s={12} className="center">
+          <Col s={12} className="center pageTitle">
+
             <h1>Search Books</h1>
+
+          </Col>
+        </Row>
+
+        <Row>
+          <Col s={12} className="center">
+
+            <Searchbar term={this.state.search} type={this.handleInputChange} loadBooks={this.loadBooks}></Searchbar>
+
             {this.state.books.length ? (
               <Results {...this.state}></Results>
             ) : (
-                <h3>No Results to Display</h3>
+                <h3 className="noResults">Search to View Books</h3>
               )}
+
           </Col>
         </Row>
       </>
