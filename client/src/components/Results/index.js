@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, Col, Row } from 'react-materialize';
+import { Card, CardTitle, Col, Row, Button } from 'react-materialize';
 import API from '../../utils/API';
 import './styles.css'
 
@@ -34,9 +34,9 @@ function Results({ books, loadBooks }) {
               header={<CardTitle image={!book.volumeInfo.imageLinks ? "" : book.volumeInfo.imageLinks.thumbnail}></CardTitle>}
               actions={[
                 <a className="cardLink" href={book.volumeInfo.infoLink}>View Book</a>,
-                <a className="cardLink"
+                <Button flat waves="light" className="cardLink"
                   onClick={() => { saveBook(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink) }}
-                  >Save Book</a>
+                  >Save Book</Button>
               ]}>
 
               <h5>{book.volumeInfo.title}</h5>
@@ -59,9 +59,9 @@ function Results({ books, loadBooks }) {
                 header={<CardTitle image={!book.image ? "" : book.image}></CardTitle>}
                 actions={[
                   <a className="cardLink" href={book.link}>View Book</a>,
-                  <a className="cardLink"
+                  <Button flat waves="light" className="cardLink"
                     onClick={() => { removeBook(book._id) }}
-                    >Remove Book</a>
+                    >Remove Book</Button>
                 ]}>
 
                 <h5>{book.title}</h5>

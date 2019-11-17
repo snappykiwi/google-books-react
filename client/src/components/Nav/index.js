@@ -6,7 +6,7 @@ import './styles.css';
 function NavbarComp() {
 
   return (
-      <Navbar brand={<a>Google Books Search</a>} alignLinks="right">
+      <Navbar brand={<Link>Google Books Search</Link>} alignLinks="right">
         <Link to="/search">
           Search
         </Link>
