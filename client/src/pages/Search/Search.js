@@ -30,11 +30,18 @@ class Search extends Component {
     this.setState({ search: value })
   };
 
+  enterPressed = event => {
+    event.persist();
+    if (event.which === 13) {
+      this.loadBooks();
+    }
+  }
+
   waitSearch = (event) => {
     debounce(300, (event) => {
       this.handleInputChange(event)
     });
-  }
+  };
 
 
 
@@ -53,7 +60,7 @@ class Search extends Component {
         <Row>
           <Col s={12} className="center">
 
-            <Searchbar term={this.state.search} type={this.handleInputChange} loadBooks={this.loadBooks}></Searchbar>
+            <Searchbar term={this.state.search} enter={this.enterPressed} type={this.handleInputChange} loadBooks={this.loadBooks}></Searchbar>
 
             {this.state.books.length ? (
               <Results {...this.state}></Results>
